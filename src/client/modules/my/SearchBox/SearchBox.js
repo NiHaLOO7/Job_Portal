@@ -15,7 +15,8 @@ export default class SearchBox extends LightningElementWithBootstrap {
         }
     }
     searchHandler(){
-        console.log(this.searchFields)
-
+        this.dispatchEvent(new CustomEvent('filtersearch',{
+            detail:this.searchFields
+        }));
     }
 }
