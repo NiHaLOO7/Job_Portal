@@ -702,7 +702,7 @@ export default class App extends LightningElementWithBootstrap {
       this.jobs = jobList;
     }
     
-    // Api shutted down by git.
+    // Api shutted down by github.
     fetchJobs(){
         const url = `${BASE_URL}?page=1&description=${this.description}&location=${this.location}&full_time=${this.full_time}`
         fetch(url).then(response => response.json())
