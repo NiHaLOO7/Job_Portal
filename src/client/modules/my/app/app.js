@@ -690,8 +690,11 @@ export default class App extends LightningElementWithBootstrap {
       // As the api stopped working i am doing the filtering work here only
       let jobList = [];
       this.jobs_copy.forEach((job)=>{
-        let jobLocation = event.detail.location ? event.detail.location : job.location;
-        if( jobLocation === job.location && job.type.includes(type) && (job.description.includes(event.detail.description) || job.title.includes(event.detail.description))){
+        let jobLocationList = job.location.split(/\b(?:[\s]or[\s]|,[\s])\b/gi).map(element => {
+          return element.toLowerCase();
+        });
+        let jobLocation = event.detail.location ? event.detail.location.toLowerCase() : jobLocationList[0];
+        if( jobLocationList.includes(jobLocation) && job.type.includes(type) && (job.description.includes(event.detail.description) || job.title.includes(event.detail.description))){
           jobList.push(job);
         }
 
