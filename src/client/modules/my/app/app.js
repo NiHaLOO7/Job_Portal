@@ -694,7 +694,7 @@ export default class App extends LightningElementWithBootstrap {
           return element.toLowerCase();
         });
         let jobLocation = event.detail.location ? event.detail.location.toLowerCase() : jobLocationList[0];
-        if( jobLocationList.includes(jobLocation) && job.type.includes(type) && (job.description.includes(event.detail.description) || job.title.includes(event.detail.description))){
+        if( jobLocationList.includes(jobLocation) && job.type.includes(type) && (job.description.toLowerCase().includes(event.detail.description.toLowerCase()) || job.title.toLowerCase().includes(event.detail.description.toLowerCase()))){
           jobList.push(job);
         }
 
