@@ -1,7 +1,9 @@
 # jobboard
 
 Here will be some information about the app.
-To see the us visit to this link => https://mighty-cliffs-67829.herokuapp.com/
+
+
+To see the UI screen visit to this link => https://mighty-cliffs-67829.herokuapp.com/
 
 ## How to start?
 
