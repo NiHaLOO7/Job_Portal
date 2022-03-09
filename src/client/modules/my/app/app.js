@@ -691,9 +691,9 @@ export default class App extends LightningElementWithBootstrap {
       let jobList = [];
       this.jobs_copy.forEach((job)=>{
         let jobLocationList = job.location.split(/\b(?:[\s]or[\s]|,[\s])\b/gi).map(element => {
-          return element.toLowerCase();
+          return element.toLowerCase().trim();
         });
-        let jobLocation = event.detail.location ? event.detail.location.toLowerCase() : jobLocationList[0];
+        let jobLocation = event.detail.location ? event.detail.location.toLowerCase().trim() : jobLocationList[0];
         if( jobLocationList.includes(jobLocation) && job.type.includes(type) && (job.description.toLowerCase().includes(event.detail.description.toLowerCase()) || job.title.toLowerCase().includes(event.detail.description.toLowerCase()))){
           jobList.push(job);
         }
