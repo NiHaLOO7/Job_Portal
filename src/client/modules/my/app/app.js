@@ -694,11 +694,18 @@ export default class App extends LightningElementWithBootstrap {
           return element.toLowerCase().trim();
         });
         let jobLocation = event.detail.location ? event.detail.location.toLowerCase().trim() : jobLocationList[0];
-        if( jobLocationList.includes(jobLocation) && job.type.includes(type) && (job.description.toLowerCase().includes(event.detail.description.toLowerCase()) || job.company.toLowerCase().includes(event.detail.description.toLowerCase()) || job.title.toLowerCase().includes(event.detail.description.toLowerCase()))){
+        if( 
+            jobLocationList.includes(jobLocation) && 
+            job.type.includes(type) && 
+            (job.description.toLowerCase().includes(event.detail.description.toLowerCase()) || 
+            job.company.toLowerCase().includes(event.detail.description.toLowerCase()) || 
+            job.title.toLowerCase().includes(event.detail.description.toLowerCase()))
+          )
+        {
           jobList.push(job);
         }
 
-      })
+      });
       this.jobs = jobList;
     }
     
